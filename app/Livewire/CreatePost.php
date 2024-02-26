@@ -2,21 +2,21 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\PostForm;
 use App\Models\Post;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class CreatePost extends Component
 {
-    public $title;
+    public PostForm $form;
 
     public function save()
     {
-        $post = Post::create([
-            'title' => $this->title
-        ]);
+        $this->form->store();
 
         return redirect()->to('/posts')
-            ->with('status', 'Post created!');
+            ->with('status', 'Post successfully created.');
     }
 
     public function render()

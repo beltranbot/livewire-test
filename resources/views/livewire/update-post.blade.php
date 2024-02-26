@@ -4,5 +4,6 @@
     <x-input-text name="form.content" wire:model="form.content" />
 
     <button type="submit">Save</button>
+
     <span wire:loading>Saving...</span>
 </form>
